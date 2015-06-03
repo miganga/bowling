@@ -85,7 +85,7 @@ var Bowling = (function() {
 		for(var i = 1;i < 11;i++) {
 			if(this.frame[i].display) {
 				this.display.frameCell[i-1].innerHTML = this.frame[i].score;
-				console.log(this.frame[i].score);
+				
 			}
 		}
 	};
@@ -104,7 +104,7 @@ var Bowling = (function() {
 				alert('Game over! Thanks for playing.  Total Score: ' + this.frame[10].score);
 				return;
 			}
-			console.log('Ball is thrown');
+			
 			var cb = this.game.currentBall;
 			var cf = this.game.currentFrame;
 			var ic = this.display.inputCell;
