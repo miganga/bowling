@@ -5,3 +5,6 @@ Bowling game simulator with throw & random throw buttons.  To play, press either
 
 ## Testing:
 For testing, you can use karma, simply type in the root directory: npm install to install all the dependencies.  Then, type npm test.
+
+## Installation: 
+Just download the master branch & run the index.html in a browser.
