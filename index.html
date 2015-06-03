@@ -60,30 +60,28 @@
 <script src="js/main.js"></script>
 <script type="text/javascript">
   function modifyInput(evt) {
-  
-  if(evt.target.id == 'throwbutton') {
 
+  if (evt.target.id == 'throwbutton') {
 
-  
-		b.display.inputCell = document.getElementById('pinsdown').value;
-		if(b.display.inputCell.indexOf('.') != -1 || b.display.inputCell.indexOf(',') != -1) {
-			alert('Please enter an integer number between 0 & 10');
-			return;
-		}
-		b.display.inputCell = parseInt(b.display.inputCell);
-		
+  b.display.inputCell = document.getElementById('pinsdown').value;
+  if (b.display.inputCell.indexOf('.') != -1 || b.display.inputCell.indexOf(',') != -1) {
+  alert('Please enter an integer number between 0 & 10');
+  return;
+  }
+  b.display.inputCell = parseInt(b.display.inputCell);
+
   b.throwBall();
   } else {
-  
-  b.display.inputCell = Math.floor(((Math.random() * 10) + 1) % (11 - (b.game.pinsDown == 0 ? 0 : b.game.pinsDown)) );
-  
+
+  b.display.inputCell = Math.floor(((Math.random() * 10) + 1) % (11 - b.game.pinsDown)));
+
   b.throwBall();
-  
+
   }
-	}
-	var b = new Bowling();
-	b.display.rollCell = document.getElementById('scoreboard').rows[1].cells;
-	b.display.frameCell = document.getElementById('scoreboard').rows[2].cells;
+  }
+  var b = new Bowling();
+  b.display.rollCell = document.getElementById('scoreboard').rows[1].cells;
+  b.display.frameCell = document.getElementById('scoreboard').rows[2].cells;
   var throwbutton = document.getElementById("throwbutton");
   var randomthrowbutton = document.getElementById("randomthrowbutton");
   throwbutton.addEventListener("click", modifyInput, false);
