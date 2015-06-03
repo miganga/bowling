@@ -1,0 +1,77 @@
+<!doctype html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<title>Bowling Game</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+
+
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="hero-unit">
+	<h2>Bowling Game</h2>
+	<p>Please enter a number between 1 & 10 for every ball throw and press <strong>throw</strong>.</p>
+	<input id="pinsdown" type="text" size="10">
+	<button id="throwbutton">Throw</button>
+	<br><br>
+	<table class="score" id="scoreboard">
+		<tr><th colspan="21">Score Board</th></tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="3"></td>
+		</tr>
+	</table>
+</div>
+<script src="js/main.js"></script>
+<script>
+	function modifyInput() {
+		b.display.inputCell = document.getElementById('pinsdown').value;
+		if(b.display.inputCell.indexOf('.') != -1 || b.display.inputCell.indexOf(',') != -1) {
+			alert('Please enter an integer number between 0 & 10');
+			return;
+		}
+		b.display.inputCell = parseInt(b.display.inputCell);
+		console.log('Pins Down: ' + b.display.inputCell);
+		b.throwBall();
+	}
+	var b = new Bowling();
+	b.display.rollCell = document.getElementById('scoreboard').rows[1].cells;
+	b.display.frameCell = document.getElementById('scoreboard').rows[2].cells;
+	var throwbutton = document.getElementById("throwbutton");
+	throwbutton.addEventListener("click", modifyInput, false);
+</script>
+</body>
+</html>
